@@ -27,9 +27,9 @@ const portfolioProjects = [
     appName: 'Mitsaq',
     title: 'Mitsaq',
     primaryColor: '368743',
-    tags: ['Research & Design', 'Mouslem Apps', 'Figma'],
+    tags: ['Research & Design', 'Muslim Apps', 'Figma'],
     description:
-      'Designed a learning platform bridging education and industry, empowering vocational students to reach their better future.',
+      'A comprehensive Islamic learning app designed to help Muslims build consistent worship habits and deepen their religious knowledge.',
     image: mitsaqImg,
     logo: mitsaqImg,
     section: 'Mobile Design',

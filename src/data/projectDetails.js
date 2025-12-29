@@ -119,7 +119,7 @@ const projectDetails = {
   // --- Proyek MITSAQ ---
   mitsaq: {
     overview:
-      "Mitsaq is a religious learning app aimed at building daily habits and providing educational resources for users.",
+      "Mitsaq is a comprehensive Islamic learning app designed to help Muslims build consistent daily worship habits and deepen their religious knowledge. The app features prayer time reminders, Quran reading tracker, hadith collections, and personalized learning paths to guide users on their spiritual journey.",
     team: [
       {
         name: "Ariiq Tsany Zu",
@@ -136,36 +136,36 @@ const projectDetails = {
     timeline: "Feb '24 – Mar '24 (2 months)",
     problems: [
       {
-        title: "Complex Navigation",
+        title: "Inconsistent Worship Habits",
         description:
-          "Users need to quickly find and browse projects without feeling overwhelmed.",
+          "Many Muslims struggle to maintain consistent daily worship routines due to busy schedules and lack of reminders.",
       },
       {
-        title: "Unclear Process",
+        title: "Fragmented Learning Resources",
         description:
-          "A complicated booking process can lead to high abandonment rates.",
+          "Islamic educational content is scattered across multiple platforms, making it difficult for users to find reliable and structured learning materials.",
       },
       {
-        title: "Communication Tools",
+        title: "Lack of Progress Tracking",
         description:
-          "Effective communication between renters and owners is crucial for success.",
+          "Users have no way to track their spiritual growth and daily achievements, leading to decreased motivation over time.",
       },
     ],
     solutions: [
       {
-        title: "Simplified Navigation",
+        title: "Smart Prayer Reminders",
         description:
-          "I enhanced the user experience by implementing a streamlined navigation system.",
+          "Implemented an intelligent notification system with customizable prayer time alerts based on user location and preferences.",
       },
       {
-        title: "Intuitive Booking Flow",
+        title: "Curated Learning Paths",
         description:
-          "I redesigned the booking process into simple, manageable steps.",
+          "Designed structured learning modules with categorized content including Quran, Hadith, Fiqh, and daily duas in one unified platform.",
       },
       {
-        title: "Enhanced Communication",
+        title: "Gamified Progress System",
         description:
-          "To facilitate effective communication, I introduced a built-in messaging system.",
+          "Created an engaging progress tracking dashboard with daily streaks, achievements, and milestones to motivate consistent practice.",
       },
     ],
     colors: [
