@@ -4,8 +4,11 @@ import { Link, useLocation } from 'react-router-dom';
  * Menampilkan judul, deskripsi singkat, tags, dan gambar pratinjau.
  * Kartu menggunakan gradien berdasarkan warna utama project.
  * Pada hover, kartu terangkat sedikit dan bayangannya bertambah.
+ *
+ * @param {Object} project - Data proyek untuk ditampilkan
+ * @param {boolean} isFullWidth - Apakah kartu ditampilkan dengan lebar penuh (col-span-2)
  */
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, isFullWidth = false }) {
   const location = useLocation();
   const fromPage = location.pathname === '/' ? 'home' : 'portfolio';
   /*
@@ -22,11 +25,18 @@ export default function ProjectCard({ project }) {
       style={{ fontFamily: '"Bricolage Grotesque", sans-serif' }}
     >
       {/*
-        PERUBAHAN: Menghapus 'h-[612px]' dan 'justify-between'
-        Ini akan membuat tinggi kartu dinamis sesuai kontennya.
+        Layout kartu: untuk full-width, gunakan layout side-by-side di desktop
+        untuk menampilkan konten dan gambar secara optimal
       */}
-      <div className="rounded-3xl bg-[#FAFAFA] transition-shadow duration-300 flex flex-col">
-        <div className="pb-6 p-6">
+      <div
+        className={`rounded-3xl bg-[#FAFAFA] transition-shadow duration-300 flex ${
+          isFullWidth ? 'flex-col md:flex-row' : 'flex-col'
+        }`}
+      >
+        {/* Content Section */}
+        <div
+          className={`pb-6 p-6 ${isFullWidth ? 'md:w-2/5 md:flex md:flex-col md:justify-center' : ''}`}
+        >
           {/* Header: Nama Projek di kiri, Tahun & Role di kanan banget */}
           <div className="flex justify-between items-center mb-1">
             <h3 className="text-lg md:text-2xl font-bold text-black">
@@ -61,16 +71,23 @@ export default function ProjectCard({ project }) {
           </div>
         </div>
 
-        {/* PERUBAHAN: Mengganti 'h-64' (256px) menjadi 'h-96' (384px)
-          Ini membuat gambar Anda jauh lebih besar.
-        */}
-        <div className="mt-6 w-full h-96 overflow-hidden">
+        {/* Image Section: untuk full-width, gambar lebih besar dan menggunakan aspect-ratio */}
+        <div
+          className={`w-full overflow-hidden ${
+            isFullWidth
+              ? 'md:w-3/5 h-72 md:h-auto md:min-h-[400px]'
+              : 'mt-6 h-96'
+          }`}
+        >
           <img
             src={project.image}
             alt={project.appName}
-            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            className={`w-full h-full group-hover:scale-105 transition-transform duration-500 ${
+              isFullWidth
+                ? 'object-cover object-top md:rounded-r-3xl'
+                : 'object-cover object-center'
+            }`}
             loading="lazy"
-            height="384" // Sesuai dengan kelas h-96
           />
         </div>
       </div>
